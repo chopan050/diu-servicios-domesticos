@@ -1,0 +1,106 @@
+.wrapper {
+    width: 520px;
+    background: #f8f8f8;
+    color: #000000;
+    border-radius: 10px;
+    padding: 50px 50px;
+    outline: none;
+    border: 1px solid #858585;
+    position: relative; /* Para que el botón de retroceso esté bien posicionado */
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery div {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gallery img {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.gallery img.selected {
+    border: 2px solid #000;
+}
+
+.profile-form-container h2,
+.profile-image-container,
+.edit-button {
+    text-align: center;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-button {
+    display: block;
+    margin: 10px auto;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #333333;
+}
