@@ -1,0 +1,52 @@
+/* src/components/NavBar/NavBar.css */
+
+.navbar {
+    background-color: #f8f8f8; /* Color de fondo de la barra */
+    padding: 15px; /* Espaciado interno */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    color: white; /* Color del texto */
+    position: fixed; /* Mantiene la barra fija en la parte superior */
+    top: 0; /* Se asegura de que esté en la parte superior */
+    left: 0; /* Asegúrate de que esté alineado a la izquierda */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.navbar h1 {
+    margin: 0; /* Elimina márgenes por defecto */
+    color: black;
+    font-size: 30px; /* Tamaño del texto del título */
+    font-weight: 700;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1:hover {
+    color: black;
+    text-decoration: underline; /* Subraya el texto al pasar el mouse */
+    cursor: pointer;
+}
+
+.navbar ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    color: black;
+    padding: 0; /* Elimina el espaciado interno */
+    display: flex; /* Usa flexbox para alinear elementos de la lista */
+}
+
+.navbar li {
+    margin-left: 20px; /* Espacio entre los elementos de la lista */
+}
+
+.navbar a {
+    font-size: 18px; /* Tamaño del texto del título */
+    color: black; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.navbar a:hover {
+    color: black;
+    text-decoration: underline; /* Subraya el texto al pasar el mouse */
+}
+

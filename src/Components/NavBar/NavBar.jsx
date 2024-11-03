@@ -4,11 +4,10 @@ import './NavBar.css';
 const NavBar = () => {
     return (
         <nav className="navbar">
-            <h1>Mi Aplicación</h1>
+            <h1 href="/home">Jobkonect</h1>
             <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="/user">Mi perfil</a></li>
             </ul>
         </nav>
     );

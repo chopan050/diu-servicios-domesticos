@@ -1,0 +1,17 @@
+
+.header {
+    background-color: #f8f8f8; /* Color de fondo del header */
+    color: white; /* Color del texto */
+    padding: 15px; /* Espaciado interno */
+    position: fixed; /* Fijo en la parte superior */
+    top: 0; /* Asegura que esté en la parte superior */
+    left: 0; /* Alineado a la izquierda */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Por encima de otros elementos */
+    outline: none;
+    border: 1px solid #858585;
+}
+
+.header h1 {
+    margin: 0; /* Elimina márgenes por defecto */
+}
