@@ -4,10 +4,16 @@ import { FaUser, FaLock, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 
-export const LoginForm = () => {
+
+const LoginForm = ({ onLogin }) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //lógica de autenticación
+        onLogin();
+    };
   return (
     <div className='wrapper'>
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <h1>Jobkonect</h1>
             <h2>Iniciar sesión</h2>
             <div className="input-box">
@@ -20,7 +26,6 @@ export const LoginForm = () => {
             </div>
             <button className="primary-button" type="submit">Continuar</button>
             <div className="remember-forgot">
-                {/*<label><input type='checkbox'/>Recordar Contraseña</label>*/}
                 <a href="#">Recuperar Contraseña</a>
             </div>
 
@@ -45,3 +50,4 @@ export const LoginForm = () => {
     </div>
   )
 }
+export default LoginForm;
