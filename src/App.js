@@ -15,7 +15,6 @@ const App = () => {
     setIsLoggedIn(true);
   };
 
-
   return (
       <Router>
             <div className="App">
