@@ -1,3 +1,11 @@
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
 .task-card{
     width: 100%;
     background: #f8f8f8;

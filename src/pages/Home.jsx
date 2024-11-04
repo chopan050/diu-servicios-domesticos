@@ -1,8 +1,12 @@
+import { useState } from "react";
+import FilterButton from "../components/FilterButton";
 import SearchBar from "../components/SearchBar";
-import TaskCard from "../components/TaskCard"
+import TaskSection from "../components/TaskSection";
 import "./Home.css";
+import NavBar from "../components/NavBar";
 
 export function Home() {
+
 	const tasks = [
 		{
 			title: "Podar césped en Diag. Las Torres 2640",
@@ -20,12 +24,29 @@ export function Home() {
 			title: "Paseo de perro",
 			image: "perro",
 		}
-	]
+	];
+
+	const [searchResults, setSearchResults] = useState(tasks);
+
+	function onChangeTaskQuery(event) {
+		const taskQuery = event.target.value;
+		if (taskQuery === "") {
+			setSearchResults(tasks);
+		} else {
+			setSearchResults(
+				tasks.filter(
+					task => task.title.toLocaleLowerCase().includes(taskQuery.toLocaleLowerCase())
+				)
+			);
+		}
+	}
 
   return <div className="wrapper">
-		<SearchBar />
-		<div className="task-container">
-			{tasks.map((task, i) => <TaskCard key={i} title={task.title} image={task.image} />)}
+		<div className="inner-box">
+			<SearchBar onChangeTaskQuery={onChangeTaskQuery} />
+			<FilterButton />
+			<TaskSection searchResults={searchResults} />
 		</div>
+		<NavBar />
 	</div>  
 }
