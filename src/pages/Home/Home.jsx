@@ -1,12 +1,11 @@
 import { useState } from "react";
-import FilterButton from "../components/FilterButton";
-import SearchBar from "../components/SearchBar";
-import TaskSection from "../components/TaskSection";
+import FilterButton from "../../components/FilterButton/FilterButton";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import TaskSection from "../../components/TaskSection/TaskSection";
+import NavBar from "../../components/NavBar/NavBar";
 import "./Home.css";
-import NavBar from "../components/NavBar";
 
-export function Home() {
-
+export default function Home() {
 	const tasks = [
 		{
 			title: "Podar césped en Diag. Las Torres 2640",

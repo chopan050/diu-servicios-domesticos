@@ -1,32 +1,31 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import LoginForm from './Components/LoginForm/LoginForm';
-import NavBar from './Components/NavBar/NavBar';
-import Home from './Components/Home/Home';
-import User from './Components/User/User';
-import Header from './Components/Header/Header';
+import LoginForm from './pages/LoginForm/LoginForm';
+import Home from './pages/Home/Home';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import NewTaskPage from './pages/NewTaskPage/NewTaskPage';
 
 
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
   return (
-      <Router>
-            <div className="App">
-                {isLoggedIn && <Header />} {/* Renderiza NavBar solo si el usuario está logueado */}
-                <Routes>
-                    <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <LoginForm onLogin={handleLogin} />} />
-                    <Route path="/home" element={isLoggedIn ? <Home /> : <Navigate to="/" />} />
-                    <Route path="/user" element={isLoggedIn ? <User /> : <Navigate to="/" />} />
-              </Routes>
-          </div>
-      </Router>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <LoginForm onLogin={handleLogin} />} />
+          <Route path="/home" element={isLoggedIn ? <Home /> : <Navigate to="/" />} />
+          <Route path="/user" element={isLoggedIn ? <ProfilePage setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/" />} />
+          <Route path="/new_task" element={isLoggedIn ? <NewTaskPage /> : <Navigate to="/" />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

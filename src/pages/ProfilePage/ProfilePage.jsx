@@ -1,18 +1,21 @@
 import { useState } from 'react';
-import UserProfileForm from '../components/UserProfileForm';
-import ImageGallery from '../components/ImageGallery';
-import profile1 from '../assets/profile1.jpg';
-import profile2 from '../assets/profile2.jpg';
-import profile3 from '../assets/profile3.jpg';
-import profile4 from '../assets/profile4.jpg';
+import { useNavigate } from 'react-router-dom';
+import UserProfileForm from '../../components/UserProfileForm/UserProfileForm';
+import ImageGallery from '../../components/ImageGallery/ImageGallery';
+import profile1 from '../../assets/profile1.jpg';
+import profile2 from '../../assets/profile2.jpg';
+import profile3 from '../../assets/profile3.jpg';
+import profile4 from '../../assets/profile4.jpg';
 import "./ProfilePage.css";
+import NavBar from '../../components/NavBar/NavBar';
 
 
 // Imágenes por defecto de la galería
 const defaultGalleryImages = [profile1, profile2, profile3, profile4];
 
 
-export default function ProfilePage() {
+export default function ProfilePage({ setIsLoggedIn }) {
+  const navigate = useNavigate();
 
   const [profileImage, setProfileImage] = useState(defaultGalleryImages[0]);
   const [showGallery, setShowGallery] = useState(false);
@@ -40,9 +43,8 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="app">
-      {showGallery ? (
-        <div className="wrapper">
+    <div className="wrapper">
+      {showGallery ? <>
           <button className="back-button" onClick={() => setShowGallery(false)}>&larr; Volver</button>
           <ImageGallery
             currentImage={profileImage}
@@ -50,18 +52,19 @@ export default function ProfilePage() {
             onImageChange={handleImageChange}
             onSave={handleGallerySave}
           />
-        </div>
-      ) : (
-        <div className="wrapper">
-          <button className="back-button">&larr; Volver</button>
+        </>
+      : <>
+          <button className="back-button" onClick={() => navigate("/home")}>&larr; Volver</button>
+          <button className="logout-button" onClick={() => setIsLoggedIn(false)}>Cerrar sesión</button>
           <UserProfileForm
             profileImage={profileImage}
             userData={userData}
             onUserDataChange={handleUserDataChange}
             onEditImage={() => setShowGallery(true)}
           />
-        </div>
-      )}
+        </>
+      }
+      <NavBar />
     </div>
   );
 }
