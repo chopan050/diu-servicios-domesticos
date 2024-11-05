@@ -18,16 +18,13 @@
 
 .modal__content {
     background-color: #fefefe;
-    margin: 40px auto;
+    margin: auto;
     width: 500px;
+    height: 200px;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 16px;
     box-shadow: 0px 10px 10px -4px rgba(0,0,0,0.75);
-}
-
-.modal__header {
-    float: left;
 }
 
 .modal__close-button {
@@ -42,21 +39,4 @@
     color: red;
     text-decoration: none;
     cursor: pointer;
-}
-
-.form-grid {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.input-container {
-    position: relative;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-around;
-}
-
-.value-input {
-    width: 100px;
 }

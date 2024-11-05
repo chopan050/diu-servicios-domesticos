@@ -3,7 +3,7 @@
         "title": "Podar césped en Diag. Las Torres 2640",
         "description": "Pódame el césped",
         "address": "Diagonal Las Torres 2640",
-        "date": "2024-11-08",
+        "date": "2024/11/08",
         "time": "16:00",
         "payment": 30000,
         "image": "cesped"
@@ -12,7 +12,7 @@
         "title": "Limpiar el baño en Av. Ossa 8224",
         "description": "Limpieza de baño remunerada",
         "address": "Av. Ossa 8224",
-        "date": "2024-11-09",
+        "date": "2024/11/09",
         "time": "16:00",
         "payment": 30000,
         "image": "baño"
@@ -21,7 +21,7 @@
         "title": "Ayuda con mudanza!",
         "description": "Pódame el césped",
         "address": "Coventry 1287",
-        "date": "2024-11-10",
+        "date": "2024/11/10",
         "time": "18:00",
         "payment": 30000,
         "image": "mudanza"
@@ -30,7 +30,7 @@
         "title": "Paseo de perro",
         "description": "Mi perrito lindo precioso necesita paseos",
         "address": "Av. Irarrázaval 3224",
-        "date": "2024-11-20",
+        "date": "2024/11/20",
         "time": "10:00",
         "payment": 30000,
         "image": "perro"
