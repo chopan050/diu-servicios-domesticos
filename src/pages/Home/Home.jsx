@@ -7,27 +7,35 @@ import tasks from "../../assets/tasks.json";
 import "./Home.css";
 
 export default function Home() {
-	const [searchResults, setSearchResults] = useState(tasks);
+  const [searchResults, setSearchResults] = useState([]);
 
-	const onChangeTaskQuery = (event) => {
-		const taskQuery = event.target.value;
-		if (taskQuery === "") {
-			setSearchResults(tasks);
-		} else {
-			setSearchResults(
-				tasks.filter(
-					task => task.title.toLocaleLowerCase().includes(taskQuery.toLocaleLowerCase())
-				)
-			);
-		}
-	};
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    setSearchResults([...tasks, ...storedTasks]);
+  }, []);
 
-  return <div className="wrapper">
-		<div className="inner-box">
-			<SearchBar onChangeTaskQuery={onChangeTaskQuery} />
-			<FilterButton />
-			<TaskSection searchResults={searchResults} />
-		</div>
-		<NavBar />
-	</div>  
+  const onChangeTaskQuery = (event) => {
+    const taskQuery = event.target.value;
+    const allTasks = [...tasks, ...(JSON.parse(localStorage.getItem("tasks")) || [])];
+    if (taskQuery === "") {
+      setSearchResults(allTasks);
+    } else {
+      setSearchResults(
+        allTasks.filter(
+          task => task.title.toLowerCase().includes(taskQuery.toLowerCase())
+        )
+      );
+    }
+  };
+
+  return (
+    <div className="wrapper">
+      <div className="inner-box">
+        <SearchBar onChangeTaskQuery={onChangeTaskQuery} />
+        <FilterButton />
+        <TaskSection searchResults={searchResults} />
+      </div>
+      <NavBar />
+    </div>
+  );
 }

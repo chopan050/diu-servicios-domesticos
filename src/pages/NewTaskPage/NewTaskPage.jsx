@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
-
+import TaskImageGallery from "../../components/TaskImageGallery/TaskImageGallery";
 import profile1 from '../../assets/profile1.jpg';
 import profile2 from '../../assets/profile2.jpg';
 import profile3 from '../../assets/profile3.jpg';
@@ -19,13 +18,15 @@ export default function NewTaskPage() {
     address: '',
     schedule: '',
     amount: '',
-    image: '../../assets/no_page.png' // Imagen por defecto
+    image: 'no_task' // Imagen por defecto
   });
-  
+
   const [showGallery, setShowGallery] = useState(false);
 
+  // Cambiar la imagen seleccionada en el formulario
   const handleImageChange = (newImage) => {
-    setTaskData((prevData) => ({ ...prevData, image: newImage }));
+    const imageName = newImage.split('/').pop().split('.')[0];
+    setTaskData((prevData) => ({ ...prevData, image: imageName }));
   };
 
   const handleGallerySave = () => {
@@ -39,25 +40,26 @@ export default function NewTaskPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí podrías agregar la lógica para enviar el formulario
-    console.log('Formulario enviado:', taskData);
-    navigate("/home"); // Navegar a otra página después de enviar
+    const existingTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const newTasks = [...existingTasks, taskData];
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
+    navigate("/home");
   };
 
   return (
     <div className="wrapper">
       {showGallery ? (
         <>
-          <button className="back-button" onClick={() => setShowGallery(false)}>
-            &larr; Volver
-          </button>
-          <ImageGallery
-            currentImage={taskData.image}
-            images={defaultGalleryImages}
-            onImageChange={handleImageChange}
-            onSave={handleGallerySave}
-          />
-        </>
+        <button className="back-button" onClick={() => setShowGallery(false)}>
+          &larr; Volver
+        </button>
+        <TaskImageGallery
+          currentImage={taskData.image}
+          images={defaultGalleryImages}
+          onImageChange={handleImageChange}
+          onSave={handleGallerySave}
+        />
+      </>
       ) : (
         <>
           <button className="back-button" onClick={() => navigate("/home")}>
@@ -120,7 +122,7 @@ export default function NewTaskPage() {
             </div>
             <div>
               <label>Imagen:</label>
-              <img src={taskData.image} width="400px" height="250px" style={{"margin": "auto"}} alt="Task preview" className="image-preview" />
+              <img src={require(`../../assets/${taskData.image}.jpg`).default} width="400px" height="250px" style={{"margin": "auto"}} alt="Task preview" className="image-preview" />
               <button type="button" onClick={() => setShowGallery(true)}>
                 Editar imagen
               </button>
