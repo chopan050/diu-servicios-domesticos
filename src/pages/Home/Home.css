@@ -12,12 +12,14 @@
 }
 
 .inner-box {
-    padding: 30px 30px;
+
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
     border-radius: 10px;
     height: 740px;
+
 }
 
 .wrapper h1 {

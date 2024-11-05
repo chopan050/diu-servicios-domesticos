@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserProfileForm.css';
 
 function UserProfileForm({ profileImage, userData, onUserDataChange, onEditImage }) {
   const handleChange = (e) => {
@@ -44,7 +45,7 @@ function UserProfileForm({ profileImage, userData, onUserDataChange, onEditImage
           <label>DIRECCIÓN</label>
           <input type="text" name="address" value={userData.address} onChange={handleChange} />
         </div>
-        <button type="submit">Guardar</button>
+        <button className='save-btn' type="submit">Guardar</button>
       </form>
     </div>
   );

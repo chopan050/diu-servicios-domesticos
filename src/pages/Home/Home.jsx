@@ -30,12 +30,15 @@ export default function Home() {
 
   return (
     <div className="wrapper">
+      Jobkonect {/*Centrar titulo de app, agrandar un poco la letra */}
       <div className="inner-box">
         <SearchBar onChangeTaskQuery={onChangeTaskQuery} />
         <FilterButton />
         <TaskSection searchResults={searchResults} />
       </div>
-      <NavBar />
+      <div className='navbar-container'>
+        <NavBar/>
+      </div>
     </div>
   );
 }
