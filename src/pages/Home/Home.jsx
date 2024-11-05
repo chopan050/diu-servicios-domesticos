@@ -1,33 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilterButton from "../../components/FilterButton/FilterButton";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import TaskSection from "../../components/TaskSection/TaskSection";
 import NavBar from "../../components/NavBar/NavBar";
+import tasks from "../../assets/tasks.json";
 import "./Home.css";
 
 export default function Home() {
-	const tasks = [
-		{
-			title: "Podar césped en Diag. Las Torres 2640",
-			image: "cesped",
-		},
-		{
-			title: "Limpiar el baño en Av. Ossa 8224",
-			image: "baño",
-		},
-		{
-			title: "Ayuda con mudanza!",
-			image: "mudanza",
-		},
-		{
-			title: "Paseo de perro",
-			image: "perro",
-		}
-	];
-
 	const [searchResults, setSearchResults] = useState(tasks);
 
-	function onChangeTaskQuery(event) {
+	const onChangeTaskQuery = (event) => {
 		const taskQuery = event.target.value;
 		if (taskQuery === "") {
 			setSearchResults(tasks);
@@ -38,7 +20,7 @@ export default function Home() {
 				)
 			);
 		}
-	}
+	};
 
   return <div className="wrapper">
 		<div className="inner-box">

@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
+import profile1 from '../../assets/profile1.jpg';
+import profile2 from '../../assets/profile2.jpg';
+import profile3 from '../../assets/profile3.jpg';
+import profile4 from '../../assets/profile4.jpg';
+
+const defaultGalleryImages = [profile1, profile2, profile3, profile4];
+
 export default function NewTaskPage() {
   const navigate = useNavigate();
 
@@ -113,7 +120,7 @@ export default function NewTaskPage() {
             </div>
             <div>
               <label>Imagen:</label>
-              <img src={taskData.image} alt="Task preview" className="image-preview" />
+              <img src={taskData.image} width="400px" height="250px" style={{"margin": "auto"}} alt="Task preview" className="image-preview" />
               <button type="button" onClick={() => setShowGallery(true)}>
                 Editar imagen
               </button>
