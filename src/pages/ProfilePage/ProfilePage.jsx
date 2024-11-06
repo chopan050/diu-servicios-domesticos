@@ -55,23 +55,21 @@ export default function ProfilePage({ setIsLoggedIn }) {
           />
         </div>
       </>
-    : <>
-        <button className="back-button" onClick={() => navigate("/home")}>&larr; Volver</button>
-        <button className="logout-button" onClick={() => setIsLoggedIn(false)}>Cerrar sesión</button>
-        <div className='inner-box2'>
-          <UserProfileForm
-            profileImage={profileImage}
-            userData={userData}
-            onUserDataChange={handleUserDataChange}
-            onEditImage={() => setShowGallery(true)}
-          />
-        </div>
-      </>
-    }
-    <div className='navbar-container'>
-      <NavBar/>
-    </div>
-    
+      : <>
+          <button className="logout-button" onClick={() => setIsLoggedIn(false)}>Cerrar sesión</button>
+          <div className='inner-box2'>
+            <UserProfileForm
+              profileImage={profileImage}
+              userData={userData}
+              onUserDataChange={handleUserDataChange}
+              onEditImage={() => setShowGallery(true)}
+            />
+          </div>
+        </>
+      }
+      <div className='navbar-container'>
+        <NavBar/>
+      </div>
     </div>
   );
 }

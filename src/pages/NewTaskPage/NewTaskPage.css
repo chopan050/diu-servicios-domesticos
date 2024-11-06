@@ -1,0 +1,30 @@
+.wrapper{
+    background: #f8f8f8;
+    color: #000000;
+    width: 520px;
+    height: 800px;
+    display: block;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #858585;
+    position: relative;
+}
+
+.wrapper .navbar-container{
+    position: absolute;  /* Cambia a "fixed", "absolute", o "relative" dependiendo de lo que necesites */
+    bottom: 0;        /* Coloca la barra de navegación en la parte inferior */
+    left: 0;          /* Alinea la barra a la izquierda */
+    width: 100%;      /* Establece el ancho completo de la ventana */
+    background-color: #333;  /* Color de fondo para la navbar */
+    color: white;     /* Color de texto */
+    padding: 0 0;  /* Agrega espacio interno alrededor de la barra */
+    text-align: center;  /* Centra el contenido */
+    border-radius: 10px;
+}
+
+.wrapper h2 {
+    margin: 30px;
+    font-size: 2em;
+}

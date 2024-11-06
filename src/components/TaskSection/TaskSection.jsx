@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./TaskSection.css";
 
 export default function TaskSection({ searchResults }) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+	const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState("");
   const [showInfoMessage, setShowInfoMessage] = useState(false);
 

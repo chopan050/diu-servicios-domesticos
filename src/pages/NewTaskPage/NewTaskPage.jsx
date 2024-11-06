@@ -6,6 +6,8 @@ import profile1 from '../../assets/profile1.jpg';
 import profile2 from '../../assets/profile2.jpg';
 import profile3 from '../../assets/profile3.jpg';
 import profile4 from '../../assets/profile4.jpg';
+import NavBar from "../../components/NavBar/NavBar";
+import "./NewTaskPage.css";
 
 const defaultGalleryImages = [profile1, profile2, profile3, profile4];
 
@@ -62,9 +64,7 @@ export default function NewTaskPage() {
       </>
       ) : (
         <>
-          <button className="back-button" onClick={() => navigate("/home")}>
-            &larr; Volver
-          </button>
+          <h2>Nueva tarea</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="title">Título de la tarea:</label>
@@ -131,6 +131,9 @@ export default function NewTaskPage() {
           </form>
         </>
       )}
+      <div className='navbar-container'>
+        <NavBar/>
+      </div>
     </div>
   );
 }
