@@ -55,12 +55,18 @@ export default function Home() {
     <div className="wrapper">
       Jobkonect {/*Centrar titulo de app, agrandar un poco la letra */}
       <div className="inner-box">
-        <SearchBar setTaskQuery={setTaskQuery} />
-        <FilterButton setDateFilter={setDateFilter} setTimeFilter={setTimeFilter} setPaymentFilter={setPaymentFilter} />
+        <div className="search-container">
+          <SearchBar setTaskQuery={setTaskQuery} />
+          <FilterButton
+            setDateFilter={setDateFilter}
+            setTimeFilter={setTimeFilter}
+            setPaymentFilter={setPaymentFilter}
+          />
+        </div>
         <TaskSection searchResults={searchResults} />
       </div>
       <div className='navbar-container'>
-        <NavBar/>
+        <NavBar />
       </div>
     </div>
   );
