@@ -83,13 +83,9 @@ button:hover {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: rgba(228, 55, 55, 0.801);
+    background-color: palevioletred;
     font-size: 16px;
     border-radius: 8px;
-}
-
-.logout-button:hover{
-    background-color: #e53935;
 }
 
 .gallery {

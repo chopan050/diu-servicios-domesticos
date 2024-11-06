@@ -18,7 +18,7 @@
     flex-direction: column;
     gap: 8px;
     border-radius: 10px;
-    height: 660px;
+    height: 740px;
 
 }
 
@@ -33,12 +33,6 @@
     text-align: center;
     margin-top: 80px;
 }
-.wrapper h3 {
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-}
-
 
 .wrapper .input-box {
     position: relative;
@@ -57,23 +51,4 @@
     font-size: 16px;
     color: #858585;
     padding: 20px 45px 20px 20px;
-}
-
-/* Contenedor que envuelve la barra de búsqueda y el botón */
-.search-container {
-    display: flex;
-    justify-content: space-between; /* Alinea los elementos a los extremos */
-    align-items: center; /* Alinea verticalmente en el centro */
-    width: 100%; /* Asegura que ocupe todo el espacio disponible */
-}
-
-    /* Si quieres que el SearchBar ocupe la mayor parte del espacio */
-.search-container .search-bar {
-    flex-grow: 1; /* Hace que la barra de búsqueda ocupe todo el espacio disponible */
-    margin-right: 10px; /* Deja un espacio entre la barra y el botón */
-}
-
-    /* Estilo para el FilterButton si es necesario */
-.filter-button {
-    margin-left: auto; /* Empuja el botón hacia el final de la barra */
 }
