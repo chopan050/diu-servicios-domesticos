@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import UserProfileForm from '../../components/UserProfileForm/UserProfileForm';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import profile1 from '../../assets/profile1.jpg';
@@ -16,8 +15,6 @@ const defaultGalleryImages = [profile1, profile2, profile3, profile4, cesped];
 
 
 export default function ProfilePage({ setIsLoggedIn }) {
-  const navigate = useNavigate();
-
   const [profileImage, setProfileImage] = useState(defaultGalleryImages[0]);
   const [showGallery, setShowGallery] = useState(false);
 
