@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ImageGallery from "../../components/ImageGallery/ImageGallery";
 import TaskImageGallery from "../../components/TaskImageGallery/TaskImageGallery";
 import profile1 from '../../assets/profile1.jpg';
 import profile2 from '../../assets/profile2.jpg';

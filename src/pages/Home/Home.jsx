@@ -5,6 +5,7 @@ import TaskSection from "../../components/TaskSection/TaskSection";
 import NavBar from "../../components/NavBar/NavBar";
 import tasks from "../../assets/tasks.json";
 import "./Home.css";
+import TaskDescription from "../../components/TaskDescription/TaskDescription";
 
 export default function Home() {
   const [taskQuery, setTaskQuery] = useState("");
@@ -12,6 +13,7 @@ export default function Home() {
   const [timeFilter, setTimeFilter] = useState(null);
   const [paymentFilter, setPaymentFilter] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -30,18 +32,11 @@ export default function Home() {
     const filters = { dates: dateFilter, times: timeFilter, payments: paymentFilter };
     for (const key of Object.keys(filters)) {
       if (filters[key] !== null) {
-        var getter = null;
-        if (key === "dates") {
-          getter = (task) => task.date;
-        } else if (key === "times") {
-          getter = (task) => task.time;
-        } else if (key === "payments") {
-          getter = (task) => task.payment;
-        }
-        if (getter !== null) {
+        const attr = key.substring(0, key.length - 1);
+        if (key !== null) {
           const [minValue, maxValue] = filters[key];
           selectedTasks = selectedTasks.filter(
-            task => (getter(task) >= minValue) && (getter(task) <= maxValue)
+            task => (task[attr] >= minValue) && (task[attr] <= maxValue)
           );
         }
       }
@@ -50,6 +45,12 @@ export default function Home() {
     setSearchResults(selectedTasks);
 
   }, [taskQuery, dateFilter, timeFilter, paymentFilter]);
+
+  if (selectedTask !== null) {
+    return <div className="wrapper">
+      <TaskDescription selectedTask={selectedTask} setSelectedTask={setSelectedTask} />
+    </div>
+  }
 
   return (
     <div className="wrapper">
@@ -63,7 +64,7 @@ export default function Home() {
             setPaymentFilter={setPaymentFilter}
           />
         </div>
-        <TaskSection searchResults={searchResults} />
+        <TaskSection searchResults={searchResults} setSelectedTask={setSelectedTask} />
       </div>
       <div className='navbar-container'>
         <NavBar />
