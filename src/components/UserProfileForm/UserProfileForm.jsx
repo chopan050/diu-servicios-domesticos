@@ -15,7 +15,6 @@ function UserProfileForm({ profileImage, userData, onUserDataChange, onEditImage
 
   return (
     <div className="profile-form-container">
-      <h2>Mis datos</h2>
       <div className="profile-image-container">
         <img src={profileImage} alt="Foto de perfil" className="profile-image" />
       </div>

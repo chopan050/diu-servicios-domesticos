@@ -52,14 +52,17 @@ export default function ProfilePage({ setIsLoggedIn }) {
           />
         </div>
       </>
-      : <div className='inner-box'>
-          <UserProfileForm
-            profileImage={profileImage}
-            userData={userData}
-            onUserDataChange={handleUserDataChange}
-            onEditImage={() => setShowGallery(true)}
-          />
-        </div>
+      : <>
+          <h2>Mis datos</h2>
+          <div className='inner-box'>
+            <UserProfileForm
+              profileImage={profileImage}
+              userData={userData}
+              onUserDataChange={handleUserDataChange}
+              onEditImage={() => setShowGallery(true)}
+            />
+          </div>
+        </>
       }
       <div className='navbar-container'>
         <NavBar/>
