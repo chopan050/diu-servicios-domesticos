@@ -5,12 +5,13 @@ import profile1 from '../../assets/profile1.jpg';
 import profile2 from '../../assets/profile2.jpg';
 import profile3 from '../../assets/profile3.jpg';
 import profile4 from '../../assets/profile4.jpg';
+import cesped from '../../assets/cesped.jpg';
 import "./ProfilePage.css";
 import NavBar from '../../components/NavBar/NavBar';
 
 
 // Imágenes por defecto de la galería
-const defaultGalleryImages = [profile1, profile2, profile3, profile4];
+const defaultGalleryImages = [profile1, profile2, profile3, profile4, cesped];
 
 
 export default function ProfilePage({ setIsLoggedIn }) {
