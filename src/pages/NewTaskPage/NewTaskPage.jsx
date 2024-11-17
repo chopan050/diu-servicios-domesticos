@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TaskImageGallery from "../../components/TaskImageGallery/TaskImageGallery";
-import profile1 from '../../assets/profile1.jpg';
-import profile2 from '../../assets/profile2.jpg';
-import profile3 from '../../assets/profile3.jpg';
-import profile4 from '../../assets/profile4.jpg';
+import task1 from '../../assets/cesped.jpg';
+import task2 from '../../assets/cocinar.jpg';
+import task3 from '../../assets/barrer.jpg';
 import NavBar from "../../components/NavBar/NavBar";
 import "./NewTaskPage.css";
 
-const defaultGalleryImages = [profile1, profile2, profile3, profile4];
+const defaultGalleryImages = [task1, task2, task3];
 
 export default function NewTaskPage() {
   const navigate = useNavigate();
