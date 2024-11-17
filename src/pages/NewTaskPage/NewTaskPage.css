@@ -35,7 +35,12 @@
     flex-direction: column;
     gap: 8px;
     border-radius: 10px;
-    height: 650px;
+    height: 560px;
     overflow: auto;
     margin-top: 20px;
+}
+
+.description-input {
+    width: 388px;
+    height: 100px;
 }

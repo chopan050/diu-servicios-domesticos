@@ -17,8 +17,9 @@ export default function NewTaskPage() {
     title: '',
     description: '',
     address: '',
-    schedule: '',
-    amount: '',
+    date: '',
+    time: '',
+    payment: '',
     image: 'no_task' // Imagen por defecto
   });
 
@@ -80,6 +81,7 @@ export default function NewTaskPage() {
               <div>
                 <label htmlFor="description">DESCRIPCIÓN</label>
                 <textarea
+                  className="description-input"
                   id="description"
                   name="description"
                   value={taskData.description}
@@ -99,23 +101,34 @@ export default function NewTaskPage() {
                 />
               </div>
               <div>
-                <label htmlFor="schedule">HORARIO</label>
+                <label htmlFor="date">FECHA</label>
                 <input
-                  type="text"
-                  id="schedule"
-                  name="schedule"
-                  value={taskData.schedule}
+                  type="date"
+                  id="date"
+                  name="date"
+                  value={taskData.date}
                   onChange={handleChange}
                   required
                 />
               </div>
               <div>
-                <label htmlFor="amount">MONTO A PAGAR</label>
+                <label htmlFor="time">HORA</label>
+                <input
+                  type="time"
+                  id="time"
+                  name="time"
+                  value={taskData.time}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="payment">MONTO A PAGAR</label>
                 <input
                   type="number"
-                  id="amount"
-                  name="amount"
-                  value={taskData.amount}
+                  id="payment"
+                  name="payment"
+                  value={taskData.payment}
                   onChange={handleChange}
                   required
                 />

@@ -43,6 +43,7 @@ export default function TaskDescription({ selectedTask, setSelectedTask }) {
         />
         <p>{selectedTask.description}</p>
         <div>
+          <p><strong>Dirección:</strong> {selectedTask.address}</p>
           <p><strong>Fecha:</strong> {selectedTask.date}</p>
           <p><strong>Hora:</strong> {selectedTask.time}</p>
           <p><strong>Salario:</strong> ${selectedTask.payment}</p>
