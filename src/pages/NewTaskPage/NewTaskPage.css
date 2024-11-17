@@ -28,3 +28,14 @@
     margin: 30px;
     font-size: 2em;
 }
+
+.inner-box {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 10px;
+    height: 650px;
+    overflow: auto;
+    margin-top: 20px;
+}

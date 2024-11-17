@@ -64,70 +64,72 @@ export default function NewTaskPage() {
       ) : (
         <>
           <h2>Nueva tarea</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="title">Título de la tarea:</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                value={taskData.title}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="description">Descripción:</label>
-              <textarea
-                id="description"
-                name="description"
-                value={taskData.description}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="address">Dirección:</label>
-              <input
-                type="text"
-                id="address"
-                name="address"
-                value={taskData.address}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="schedule">Horario:</label>
-              <input
-                type="text"
-                id="schedule"
-                name="schedule"
-                value={taskData.schedule}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="amount">Monto a pagar:</label>
-              <input
-                type="number"
-                id="amount"
-                name="amount"
-                value={taskData.amount}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label>Imagen:</label>
-              <img src={require(`../../assets/${taskData.image}.jpg`).default} width="400px" height="250px" style={{"margin": "auto"}} alt="Task preview" className="image-preview" />
-              <button type="button" onClick={() => setShowGallery(true)}>
-                Editar imagen
-              </button>
-            </div>
-            <button type="submit">Crear tarea</button>
-          </form>
+          <div className="inner-box">
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="title">TÍTULO DE LA TAREA</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={taskData.title}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="description">DESCRIPCIÓN</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  value={taskData.description}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="address">DIRECCIÓN</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={taskData.address}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="schedule">HORARIO</label>
+                <input
+                  type="text"
+                  id="schedule"
+                  name="schedule"
+                  value={taskData.schedule}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="amount">MONTO A PAGAR</label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  value={taskData.amount}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label>IMAGEN</label>
+                <img src={require(`../../assets/${taskData.image}.jpg`).default} width="400px" height="250px" style={{"margin": "auto"}} alt="Vista previa de la tarea... " className="image-preview" />
+                <button type="button" onClick={() => setShowGallery(true)}>
+                  Editar imagen
+                </button>
+              </div>
+              <button type="submit">Crear tarea</button>
+            </form>
+          </div>
         </>
       )}
       <div className='navbar-container'>

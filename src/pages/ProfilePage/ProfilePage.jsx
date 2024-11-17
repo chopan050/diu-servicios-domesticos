@@ -43,7 +43,7 @@ export default function ProfilePage({ setIsLoggedIn }) {
     <div className="wrapper">
       {showGallery ? <>
         <button className="back-button" onClick={() => setShowGallery(false)}>&larr; Volver</button>
-        <div className='inner-box2'>
+        <div className='inner-box'>
           <ImageGallery
             currentImage={profileImage}
             images={defaultGalleryImages}
@@ -52,17 +52,14 @@ export default function ProfilePage({ setIsLoggedIn }) {
           />
         </div>
       </>
-      : <>
-          <button className="logout-button" onClick={() => setIsLoggedIn(false)}>Cerrar sesión</button>
-          <div className='inner-box2'>
-            <UserProfileForm
-              profileImage={profileImage}
-              userData={userData}
-              onUserDataChange={handleUserDataChange}
-              onEditImage={() => setShowGallery(true)}
-            />
-          </div>
-        </>
+      : <div className='inner-box'>
+          <UserProfileForm
+            profileImage={profileImage}
+            userData={userData}
+            onUserDataChange={handleUserDataChange}
+            onEditImage={() => setShowGallery(true)}
+          />
+        </div>
       }
       <div className='navbar-container'>
         <NavBar/>

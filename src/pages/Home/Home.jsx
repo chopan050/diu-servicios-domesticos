@@ -7,6 +7,7 @@ import tasks from "../../assets/tasks.json";
 import "./Home.css";
 import TaskDescription from "../../components/TaskDescription/TaskDescription";
 
+
 export default function Home() {
   const [taskQuery, setTaskQuery] = useState("");
   const [dateFilter, setDateFilter] = useState(null);
@@ -54,7 +55,7 @@ export default function Home() {
 
   return (
     <div className="wrapper">
-      Jobkonect {/*Centrar titulo de app, agrandar un poco la letra */}
+      <h1>Jobkonect</h1>
       <div className="inner-box">
         <div className="search-container">
           <SearchBar setTaskQuery={setTaskQuery} />

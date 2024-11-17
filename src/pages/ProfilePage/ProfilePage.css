@@ -12,7 +12,7 @@
     position: relative;
 }
 
-.inner-box2 {
+.inner-box {
     padding: 15px 15px;
     display: flex;
     flex-direction: column;
@@ -77,19 +77,6 @@ button:hover {
 
 .back-button:hover{
     background-color: #e5e5e5;
-}
-
-.logout-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(228, 55, 55, 0.801);
-    font-size: 16px;
-    border-radius: 8px;
-}
-
-.logout-button:hover{
-    background-color: #e53935;
 }
 
 .gallery {
